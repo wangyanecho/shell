@@ -21,8 +21,10 @@ please input a number ：
 把统计出来的信息导入CMDB系统，除了进行服务器数据的采集外，还能够保证CMDB信息的准确性，
 在机器数量比较少（<1000台）的时候，可以通过该脚本结合zabbix检测每天故障服务器。
 
-需要手动下载的工具： HP的服务器有专用的raid工具：hpacucli-9.0-24.0.noarch.rpm
+需要手动下载的工具： HP的服务器有专用的raid工具：
+<pre>
+hpacucli-9.0-24.0.noarch.rpm
 非HP服务器统一使用MegaCli工具:MegaCli-8.00.48-1.i386.rpm
-
+</pre>
 参考： http://www.datadisk.co.uk/html_docs/redhat/hpacucli.htm
 http://www.ttlsa.com/tools/megacli-tool-query-raid-status/
