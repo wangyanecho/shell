@@ -1,0 +1,36 @@
+#!/usr/bin/expect -f
+#主要用来与服务器交互式操作修改密码的文件，也是最主要的文件，
+set ipaddr [lindex $argv 0]      #设置第一个参数为ip地址
+set username [lindex $argv 1]     #。。。。。。。用户名
+set passwd [lindex $argv 2]    #。。。。。。。。旧密码
+set new_pwd [lindex $argv 3]    # 。。。。。。。。 新密码
+log_file /tmp/expect.log   #设置日志文件
+set timeout 20   #设置超时时间
+spawn ssh $username@$ipaddr    #这条命令是ssh远程登录到待修改服务器的机器上
+expect {             #这块的大括号的形式其实和下面修改密码的过程类似，只是少敲了expect命令
+"yes/no" { send "yes\r";exp_continue }
+"password:" { send "$passwd\r" }
+}
+#expect "]$"
+#send "sudo su - \r"
+expect "root"   #expect用来读取登录上去的服务器的提示符，通过提示符来判断待输入的信息。
+send "passwd root\r"
+expect "New password:"
+send "$new_pwd\r"
+expect "Retype new password:"
+send "$new_pwd\r"
+expect "root"
+send "exit\r"   #退出服务器登录，也可以用logout
+#expect "]$"
+#send "exit\r"
+expect eof  #关闭expect通信
+------------------------下面这段等效于上面的。
+#expect{
+#"root" {send "passwd root\r"}
+#"expect "New password:" {send "$new_pwd\r"}
+#"expect "Retype new password:" {send "$new_pwd\r"}
+#"expect "root" {send "exit\r"}
+#}
+#expect eof
+#一般执行except文件需要用except命令 #except passwd.exp 参数1 参数2 参数3 参数4
+

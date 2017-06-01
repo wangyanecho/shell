@@ -1,0 +1,55 @@
+#!/usr/bin/expect -f
+set ipaddr [lindex $argv 0]
+set username [lindex $argv 1]
+set passwd [lindex $argv 2]
+set new_pwd [lindex $argv 3]
+log_file /tmp/expect.log
+spawn ssh $username@$ipaddr
+expect { 
+"yes/no" { send "yes\r";exp_continue }
+"password:" { send "$passwd\r" }
+}
+##############add  ansible  user###################
+#expect "]$"
+#send "sudo su -\r"
+#expect "root"
+#send "userdel -r ansibleuser\r"
+#expect "root"
+#send "useradd -u 880 antqueen\r"
+#expect "root"
+#send "passwd antqueen\r"
+#expect ":"
+#send "$new_pwd\r"
+#expect ":"
+#send "$new_pwd\r"
+#expect "root"
+#send "chage -M 99999 antqueen\r"
+#expect "root"
+#send "echo 'antqueen   ALL=(ALL)        NOPASSWD: ALL' >> /etc/sudoers\r"
+#expect "root"
+#send "exit\r"
+#expect "]$"
+#send "exit\r"
+#expect eof
+###################add ansible user########################
+#expect "]$"
+#send "sudo su -\r"
+#expect "root"
+#send "wget http://10.58.60.21/pub_file/script/csadduser.sh\r"
+#expect "root"
+#send "sh csadduser.sh\r"
+#expect "root"
+#send "exit\r"
+#expect "]$"
+#send "exit\r"
+#expect eof
+#################change password###################
+#expect "$"
+#send "sudo su -\r"
+#expect "root"
+#send "echo 'eEZjcrl28jjei-ql' |passwd --stdin gome_guest\r"
+#expect "root"
+#send "exit\r"
+#expect "$"
+#send "exit\r"
+#expect eof
