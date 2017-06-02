@@ -6,7 +6,7 @@ shell scripts 一个用来统计服务器信息的脚本，主要针对物理服
 
 示例：
 <pre>
-[root@gome /opt/shell/system_information]#sh basic_system_information.sh 
+[root@gome ]#sh basic_info.sh 
 please input a number ：
 		basic information   => 1
 		memory information  => 2
