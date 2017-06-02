@@ -1,5 +1,5 @@
 #批量修改服务器密码的脚本
-
+<pre>
 文件列表：
 chg_passwd.exp			expect执行脚本
 chg_passwd.expbak		expect备份脚本
@@ -60,3 +60,4 @@ send "exit\r"   #退出服务器登录，也可以用logout
 #expect "]$"
 #send "exit\r"
 expect eof  #关闭expect通信
+<pre>
