@@ -6,9 +6,10 @@ do
     if [ $i == 'HP' ];then
 		yum install gcc gcc-c++ -y
 		rpm -ivh http://域名/software/HPRaid/hpacucli-9.0-24.0.noarch.rpm >> /dev/null
+		rpm -ivh https://github.com/wangyanecho/shell/blob/master/system_information/tools/hpacucli-9.0-24.0.noarch.rpm >> /dev/null
     else
-		rpm -ivh http://域名/software/LSI-ToolsMegacli/Lib_Utils-1.00-09.noarch.rpm >> /dev/null
-		rpm -ivh http://域名/software/LSI-ToolsMegacli/MegaCli-8.00.48-1.i386.rpm /dev/null
+		rpm -ivh https://github.com/wangyanecho/shell/blob/master/system_information/tools/Lib_Utils-1.00-09.noarch.rpm >> /dev/null
+		rpm -ivh https://github.com/wangyanecho/shell/blob/master/system_information/tools/MegaCli-8.00.48-1.i386.rpm /dev/null
     fi
 done
 }
