@@ -1,13 +1,13 @@
 #批量修改服务器密码的脚本
 <pre>
 文件列表：
-chg_passwd.exp			expect执行脚本
-chg_passwd.expbak		expect备份脚本
-chg_passwd.sh			主要的执行脚本
-create_passwd.sh		生成密码脚本
-hosts					修改密码需要读取的文件
-newpasswd				新密码文件
-oldpasswd				初始化密码文件
+#chg_passwd.exp			expect执行脚本
+#chg_passwd.expbak		expect备份脚本
+#chg_passwd.sh			主要的执行脚本
+#create_passwd.sh		生成密码脚本
+#hosts					修改密码需要读取的文件
+#newpasswd				新密码文件
+#oldpasswd				初始化密码文件
 
 
 #执行逻辑
