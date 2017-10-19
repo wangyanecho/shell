@@ -12,7 +12,7 @@
 
 #执行逻辑
 首先需要把需要修改密码的服务器IP，用户名，默认密码写入hosts文件，
-再通过create_passwd.sh批量密码，然后用chg_passwd.sh调用chg_passwd.exp执行修改密码的操作。
+再通过create_passwd.sh批量生成密码，然后用chg_passwd.sh调用chg_passwd.exp执行修改密码的操作。
 1、生成密码
 [root@g /opt/shell/chg_passwd]#sh create_passwd.sh 
 请输入需要批量修改密码的IP个数:
